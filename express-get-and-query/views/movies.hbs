@@ -1,0 +1,15 @@
+{{!-- GET is also the default method that is used when we don't specify a method --}}
+{{!-- http://localhost:3000/moviesearch?q=hello --}}
+<form action="/moviesearch" method="GET">
+	<label for="query">Search for a title</label>
+	<input type="text" id="query" name="q">
+	<button type="submit">Search</button>
+</form>
+
+
+{{!-- we iterate over the movies array --}}
+{{#each  movieList}}
+{{!-- this is the syntax to use a partial --}}
+{{!-- '>' 'name of the partial' 'data you want to pass to the partial'  --}}
+	{{> movieCard this}}
+{{/each}}
